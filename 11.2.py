@@ -51,7 +51,7 @@ def func():
 
     def neighbours(x, y):
         nei = []
-        
+
         for i in range(8):
             val = find_next(x, y, i)
             if val != '.':
@@ -64,9 +64,9 @@ def func():
         for y in range(len(input_d)):
             for x in range(len(input_d[0])):
                 if input_d[y][x] == 'L':
-                    if not '#' in neighbours(x, y):
+                    if '#' not in neighbours(x, y):
                         new_state[y][x] = '#'
-                                
+
                 elif input_d[y][x] == '#':
                     if neighbours(x, y).count('#') >= 5:
                         new_state[y][x] = 'L'
@@ -79,7 +79,7 @@ def func():
     count = 0
     for i in range(len(input_d)):
         count += input_d[i].count('#')
-    return(count)
+    return count
 
 
 print(func())
